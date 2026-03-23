@@ -1,0 +1,43 @@
+🧠🔥 Problem Statement (Session Window)
+
+👉 You are processing logs from a food delivery application (like Swiggy/Zomato).
+
+📌 Data Stream
+
+Each event in the stream contains the following fields:
+
+user_id
+event_time
+action (open_app, view_restaurant, add_to_cart, order)
+🎯 Task
+
+For each user, identify sessions based on the following rule:
+
+A session is considered inactive/closed if there is no activity for 10 minutes
+📊 For each session, calculate:
+Total number of events (event_count)
+Session start time (session_start)
+Session end time (session_end)
+Session duration (optional but expected in real scenarios)
+📤 Output Format
+user_id
+session_start
+session_end
+event_count
+💡 Real-Life Example
+
+A user performs the following actions:
+
+10:00 → open_app
+10:02 → view_restaurant
+10:05 → add_to_cart
+
+⏳ (No activity for 10 minutes)
+
+10:20 → open_app again
+✅ Result:
+
+👉 This will create 2 separate sessions:
+
+Session 1: 10:00 → 10:05
+Session 2: starts at 10:20
